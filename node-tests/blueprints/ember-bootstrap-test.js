@@ -202,7 +202,7 @@ describe('Acceptance: ember generate ember-bootstrap', function() {
         if (match) {
           let type = match[1];
           return {
-            run: function(options) {
+            run(options) {
               let packages = options.packages || [];
               installed[type] = installed[type].concat(packages);
               return Promise.resolve();
@@ -212,7 +212,7 @@ describe('Acceptance: ember generate ember-bootstrap', function() {
 
         if (taskName === 'npm-uninstall') {
           return {
-            run: function(options) {
+            run(options) {
               let packages = options.packages || [];
               uninstalled.npm = uninstalled.npm.concat(packages);
               return Promise.resolve();
